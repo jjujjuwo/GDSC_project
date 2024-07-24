@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // 퍼즐 제출 함수
   async function submitPuzzle(puzzle) {
-    const backendUrl = 'https://4de6-14-43-171-71.ngrok-free.app/api/solve'; // 백엔드 서버의 IP 주소와 포트 사용
+    const backendUrl = 'https://port-0-sudoku-backend-lywjjuocf092590d.sel4.cloudtype.app/api/solve';
     try {
       const response = await fetch(backendUrl, {
         method: 'POST',
@@ -51,12 +51,13 @@ document.addEventListener("DOMContentLoaded", function() {
       displaySolution(solution);
     } catch (error) {
       console.error('Network error:', error);
+      alert('Network error: ' + error.message);
     }
   }
 
   // 랜덤 퍼즐 요청 함수
   async function generateRandomPuzzle() {
-    const backendUrl = 'https://4de6-14-43-171-71.ngrok-free.app/api/generate'; // 백엔드 서버의 IP 주소와 포트 사용
+    const backendUrl = 'https://port-0-sudoku-backend-lywjjuocf092590d.sel4.cloudtype.app/api/generate';
     try {
       const response = await fetch(backendUrl);
 
